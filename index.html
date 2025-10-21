@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexandru Andrei Diaconu - Cybersecurity Professional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: #0a0e27;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(0, 255, 157, 0.03) 2px,
+                rgba(0, 255, 157, 0.03) 4px
+            );
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        nav {
+            background: rgba(15, 23, 42, 0.98);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid rgba(0, 255, 157, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.95em;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+
+        nav a:hover {
+            color: #00ff9d;
+            background: rgba(0, 255, 157, 0.1);
+            border-color: rgba(0, 255, 157, 0.3);
+            text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
+        }
+
+        nav a::before {
+            content: "[ ";
+            color: #38bdf8;
+        }
+
+        nav a::after {
+            content: " ]";
+            color: #38bdf8;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: rgba(15, 23, 42, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 0 50px rgba(0, 255, 157, 0.3), 0 0 100px rgba(56, 189, 248, 0.2);
+            overflow: hidden;
+            border: 2px solid rgba(0, 255, 157, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: #00ff9d;
+            padding: 50px 40px;
+            text-align: center;
+            border-bottom: 3px solid #00ff9d;
+            position: relative;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #00ff9d, #38bdf8, #00ff9d, transparent);
+            animation: borderGlow 3s linear infinite;
+        }
+
+        @keyframes borderGlow {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        header h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-shadow: 0 0 20px rgba(0, 255, 157, 0.5);
+            letter-spacing: 2px;
+        }
+
+        .status {
+            color: #38bdf8;
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+
+        .status::before {
+            content: "> ";
+            color: #00ff9d;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+            font-size: 0.95em;
+        }
+
+        .contact-info span, .contact-info a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: all 0.3s;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .contact-info a:hover {
+            color: #00ff9d;
+            background: rgba(0, 255, 157, 0.1);
+            text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        section {
+            margin-bottom: 40px;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            color: #00ff9d;
+            font-size: 1.9em;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #00ff9d;
+            display: inline-block;
+            text-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
+            letter-spacing: 1px;
+        }
+
+        h2::before {
+            content: "# ";
+            color: #38bdf8;
+        }
+
+        .summary {
+            background: rgba(30, 41, 59, 0.6);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #00ff9d;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 255, 157, 0.1);
+            color: #cbd5e1;
+        }
+
+        .education-item, .experience-item, .project-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(30, 41, 59, 0.4);
+            border-radius: 10px;
+            border-left: 4px solid #38bdf8;
+            transition: all 0.3s;
+        }
+
+        .education-item:hover, .experience-item:hover, .project-item:hover {
+            background: rgba(30, 41, 59, 0.6);
+            border-left-color: #00ff9d;
+            box-shadow: 0 0 20px rgba(0, 255, 157, 0.2);
+        }
+
+        h3 {
+            color: #38bdf8;
+            font-size: 1.4em;
+            margin-bottom: 8px;
+            text-shadow: 0 0 8px rgba(56, 189, 248, 0.3);
+        }
+
+        h3::before {
+            content: ">> ";
+            color: #00ff9d;
+            font-size: 0.8em;
+        }
+
+        .project-badge {
+            display: inline-block;
+            background: rgba(0, 255, 157, 0.15);
+            color: #00ff9d;
+            padding: 4px 12px;
+            border-radius: 5px;
+            font-size: 0.75em;
+            margin-left: 10px;
+            border: 1px solid rgba(0, 255, 157, 0.3);
+        }
+
+        .project-header {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        .project-header:hover h3 {
+            color: #00ff9d;
+        }
+
+        .project-toggle {
+            color: #00ff9d;
+            font-size: 1.5em;
+            transition: transform 0.3s;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .project-toggle.active {
+            transform: rotate(180deg);
+        }
+
+        .project-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, opacity 0.3s ease-out, margin-top 0.3s ease-out;
+            opacity: 0;
+        }
+
+        .project-details.active {
+            max-height: 2000px;
+            opacity: 1;
+            margin-top: 15px;
+            transition: max-height 0.5s ease-in, opacity 0.4s ease-in, margin-top 0.3s ease-in;
+        }
+
+        .meta {
+            color: #94a3b8;
+            font-size: 0.9em;
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+
+        .grades {
+            background: rgba(15, 23, 42, 0.6);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-size: 0.9em;
+            border: 1px solid rgba(0, 255, 157, 0.2);
+            color: #cbd5e1;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-top: 12px;
+            color: #cbd5e1;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 10px;
+        }
+
+        li::marker {
+            color: #00ff9d;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: rgba(30, 41, 59, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid rgba(56, 189, 248, 0.3);
+            transition: all 0.3s;
+        }
+
+        .skill-category:hover {
+            border-color: #00ff9d;
+            box-shadow: 0 0 25px rgba(0, 255, 157, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .skill-category h4 {
+            color: #00ff9d;
+            margin-bottom: 12px;
+            font-size: 1.15em;
+            text-shadow: 0 0 8px rgba(0, 255, 157, 0.3);
+        }
+
+        .skill-category h4::before {
+            content: "[+] ";
+            color: #38bdf8;
+        }
+
+        .skill-category p {
+            color: #cbd5e1;
+            font-size: 0.9em;
+            line-height: 1.7;
+        }
+
+        .achievements {
+            display: grid;
+            gap: 18px;
+        }
+
+        .achievement-item {
+            background: rgba(30, 41, 59, 0.5);
+            padding: 18px;
+            border-radius: 10px;
+            border-left: 4px solid #00ff9d;
+            transition: all 0.3s;
+        }
+
+        .achievement-item:hover {
+            background: rgba(30, 41, 59, 0.7);
+            box-shadow: 0 0 20px rgba(0, 255, 157, 0.2);
+            transform: translateX(5px);
+        }
+
+        .achievement-item strong {
+            color: #38bdf8;
+        }
+
+        .achievement-item a {
+            color: #00ff9d;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .achievement-item a:hover {
+            color: #38bdf8;
+            text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
+        }
+
+        .interests {
+            background: rgba(30, 41, 59, 0.5);
+            padding: 25px;
+            border-radius: 10px;
+            border: 2px solid rgba(0, 255, 157, 0.3);
+        }
+
+        .interests ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 15px;
+            margin-left: 0;
+            list-style: none;
+        }
+
+        .interests li {
+            padding-left: 30px;
+            position: relative;
+            color: #cbd5e1;
+        }
+
+        .interests li:before {
+            content: "▸";
+            color: #00ff9d;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+
+        footer {
+            background: #0f172a;
+            color: #64748b;
+            text-align: center;
+            padding: 25px;
+            font-size: 0.9em;
+            border-top: 2px solid rgba(0, 255, 157, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .content {
+                padding: 25px;
+            }
+
+            h2 {
+                font-size: 1.6em;
+            }
+
+            .skills-grid, .interests ul {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                padding: 6px 12px;
+                font-size: 0.85em;
+            }
+
+            .project-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .project-toggle {
+                align-self: flex-end;
+                margin-top: -30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#summary">Summary</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#interests">Interests</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <header>
+            <h1>ALEXANDRU ANDREI DIACONU</h1>
+            <div class="status">Final Year Cybersecurity & Digital Forensics Student</div>
+            <div class="contact-info">
+                <span>📧 alexdiaconu369@gmail.com</span>
+                <span>📱 087 702 8150</span>
+                <a href="https://www.linkedin.com/in/alexandru-diaconu-b41277258/" target="_blank">🔗 LinkedIn</a>
+            </div>
+        </header>
+
+        <div class="content">
+            <section id="summary">
+                <h2>Summary</h2>
+                <div class="summary">
+                    Final year Cybersecurity & Digital Forensics student with hands-on experience in Python, forensic tools, and network simulation. Active in CTFs and platforms like TryHackMe and Cryptohack. Strong analytical and teamwork abilities, with a passion for applying threat detection and forensic investigation techniques in real-world scenarios.
+                </div>
+            </section>
+
+            <section id="education">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>Technological University Dublin</h3>
+                    <div class="meta">BSc Cybersecurity & Digital Forensics | 2022 – 2026 (Final Year)</div>
+                    <p><strong style="color: #00ff9d;">GPA:</strong> Y1 – 3.46 | Y2 – 3.29 | Y3 – 3.00 | <strong style="color: #38bdf8;">Expected Graduation: 2026</strong></p>
+                    <div class="grades">
+                        <strong style="color: #00ff9d;">Grades:</strong><br>
+                        <strong>Year 4:</strong> In Progress<br>
+                        <strong>Year 3:</strong> Secure Communications 85%, Group Project 80%<br>
+                        <strong>Year 2:</strong> Software Engineering and Testing 95%, IT Business Management 77%<br>
+                        <strong>Year 1:</strong> Web Development Client-Side 86%, Algorithmic Problem Solving 80%
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience">
+                <h2>Work Experience</h2>
+                <div class="experience-item">
+                    <h3>Student Ambassador</h3>
+                    <div class="meta">TU Dublin, Blanchardstown | Sep 2023 – Present</div>
+                    <ul>
+                        <li>Assisted with Student Orientation Weeks, including ID collection, campus tours, and new student guidance</li>
+                        <li>Supported student events to foster an engaging and inclusive campus environment throughout the year</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>Retail Assistant</h3>
+                    <div class="meta">SuperValu, Newbridge | Feb 2023 – Present</div>
+                    <ul>
+                        <li>Delivered customer service and resolved queries</li>
+                        <li>Handled payments and refunds accurately</li>
+                        <li>Managed stock and shelf organization</li>
+                        <li>Supported inventory checks and store upkeep</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="skills">
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Penetration Testing</h4>
+                        <p>Nmap, Wireshark, HashCat, JohnTheRipper, Burp Suite, Metasploitable, Packet Tracer</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Programming</h4>
+                        <p>Python, PHP, HTML, CSS, JavaScript, SQL, Java</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Operating Systems</h4>
+                        <p>Windows, Kali Linux, Mageia</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Digital Forensics</h4>
+                        <p>Autopsy, FTK Imager, AccessData Forensic Toolkit</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Security Practices</h4>
+                        <p>OWASP Top 10, Secure Coding Principles, Basic DevSecOps Awareness</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Soft Skills</h4>
+                        <p>Teamwork, Time Management, Communication, Adaptability</p>
+                    </div>
+                </div>
+                <p style="margin-top: 20px; color: #cbd5e1;"><strong style="color: #00ff9d;">Languages:</strong> Native in Romanian, Fluent in English</p>
+            </section>
+
+            <section id="projects">
+                <h2>Projects</h2>
+                
+                <div class="project-item">
+                    <div class="project-header" onclick="toggleProject(this)">
+                        <div>
+                            <h3>T-Pot Honeypot Deployment <span class="project-badge">Year 4</span></h3>
+                            <div class="meta">T-Pot, Docker, ELK Stack, Network Security</div>
+                        </div>
+                        <span class="project-toggle">▼</span>
+                    </div>
+                    <div class="project-details">
+                        <p style="color: #cbd5e1; margin-bottom: 12px;">Deployed and monitored a multi-honeypot platform to capture and analyze real-world cyberattack patterns.</p>
+                        <ul>
+                            <li>Set up T-Pot honeypot system with multiple services (SSH, HTTP, SMB) to attract malicious traffic</li>
+                            <li>Analyzed attacker behavior patterns, exploitation techniques, and malware samples</li>
+                            <li>Visualized attack data using integrated ELK stack dashboards</li>
+                            <li>Documented common attack vectors and IOCs for threat intelligence</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-header" onclick="toggleProject(this)">
+                        <div>
+                            <h3>ReconBot - OSINT Discord Bot <span class="project-badge">Year 3 • Grade: A (80%)</span></h3>
+                            <div class="meta">Python, Discord.py, OpenAI API, OSINT Tools | Jan – May 2025</div>
+                        </div>
+                        <span class="project-toggle">▼</span>
+                    </div>
+                    <div class="project-details">
+                        <p style="color: #cbd5e1; margin-bottom: 12px;">Developed a modular Discord bot to democratize OSINT capabilities and cybersecurity education through an accessible platform.</p>
+                        <ul>
+                            <li><strong>AI-Powered Intelligence:</strong> Integrated GPT-4o-mini for automated analysis of WHOIS data, email breaches, and password security with contextual recommendations</li>
+                            <li><strong>Comprehensive OSINT Toolkit:</strong> Implemented 8+ commands including IP geolocation, breach checking (LeakCheck & HaveIBeenPwned APIs), port scanning, and Google Dorking assistance</li>
+                            <li><strong>Security-First Design:</strong> Used K-anonymity for password checking, ephemeral Discord messages for sensitive data, and ethical usage warnings</li>
+                            <li><strong>Asynchronous Architecture:</strong> Built with Discord.py's async capabilities to handle concurrent user queries efficiently</li>
+                            <li><strong>Team Leadership:</strong> Collaborated with 2 teammates, managed version control via GitHub, and delivered comprehensive 82-page technical documentation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-header" onclick="toggleProject(this)">
+                        <div>
+                            <h3>Network Security & Firewall Configuration <span class="project-badge">Year 3</span></h3>
+                            <div class="meta">nftables, IPFire, Wireshark, hping3, Linux | Network Security CA</div>
+                        </div>
+                        <span class="project-toggle">▼</span>
+                    </div>
+                    <div class="project-details">
+                        <p style="color: #cbd5e1; margin-bottom: 12px;">Comprehensive security assessment and implementation of firewall solutions to protect against attacks.</p>
+                        <ul>
+                            <li><strong>Attack Simulation:</strong> Executed TCP SYN flood attacks and reconnaissance scans (Nmap port scans, ping sweeps) on virtualized network</li>
+                            <li><strong>Firewall Comparison:</strong> Configured and tested both nftables and IPFire, implementing rate-limiting rules, stateful inspection, and drop policies</li>
+                            <li><strong>Custom nftables Configuration:</strong> Implemented custom rulesets for packet filtering, traffic management, and DoS attack mitigation</li>
+                            <li><strong>Traffic Analysis:</strong> Used tcpdump and Wireshark to capture and analyze attack patterns and firewall effectiveness</li>
+                            <li><strong>Comparative Evaluation:</strong> Documented performance differences, ease of configuration, and security effectiveness between both firewall solutions</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-header" onclick="toggleProject(this)">
+                        <div>
+                            <h3>GymGo - Gym Management System <span class="project-badge">Year 2</span></h3>
+                            <div class="meta">PHP, MySQL, HTML, CSS</div>
+                        </div>
+                        <span class="project-toggle">▼</span>
+                    </div>
+                    <div class="project-details">
+                        <p style="color: #cbd5e1; margin-bottom: 12px;">Full-stack web application for managing gym memberships and class scheduling.</p>
+                        <ul>
+                            <li>Developed dynamic PHP backend with MySQL database integration</li>
+                            <li>Created member tracking system with CRUD operations</li>
+                            <li>Implemented class scheduling and booking functionality</li>
+                            <li>Designed responsive user interface with HTML/CSS</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-header" onclick="toggleProject(this)">
+                        <div>
+                            <h3>Dining Philosophers Problem <span class="project-badge">Year 2</span></h3>
+                            <div class="meta">Java, Concurrency, Threading</div>
+                        </div>
+                        <span class="project-toggle">▼</span>
+                    </div>
+                    <div class="project-details">
+                        <p style="color: #cbd5e1; margin-bottom: 12px;">Implemented a classic concurrency problem demonstrating resource sharing and deadlock avoidance.</p>
+                        <ul>
+                            <li>Simulated multi-threaded environment with shared resources</li>
+                            <li>Implemented deadlock prevention mechanisms</li>
+                            <li>Demonstrated understanding of synchronization and thread safety</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-header" onclick="toggleProject(this)">
+                        <div>
+                            <h3>Java Coffee Shop POS <span class="project-badge">Year 1</span></h3>
+                            <div class="meta">Java, Swing GUI</div>
+                        </div>
+                        <span class="project-toggle">▼</span>
+                    </div>
+                    <div class="project-details">
+                        <p style="color: #cbd5e1; margin-bottom: 12px;">Designed a point-of-sale system with GUI for order processing and receipt generation.</p>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-header" onclick="toggleProject(this)">
+                        <div>
+                            <h3>Personal Portfolio Website <span class="project-badge">Year 1</span></h3>
+                            <div class="meta">HTML, CSS, Responsive Design</div>
+                        </div>
+                        <span class="project-toggle">▼</span>
+                    </div>
+                    <div class="project-details">
+                        <p style="color: #cbd5e1; margin-bottom: 12px;">Built a responsive personal website showcasing academic projects and interests.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="achievements">
+                <h2>Achievements</h2>
+                <div class="achievements">
+                    <div class="achievement-item">
+                        <strong>ReconBot Group Project:</strong> Built modular OSINT Discord bot with AI integration. Final Grade: A (80%)
+                    </div>
+                    <div class="achievement-item">
+                        <strong>CTF "Zero Days 2025":</strong> Finished 47th out of 120 participants
+                    </div>
+                    <div class="achievement-item">
+                        <strong><a href="https://www.credly.com/badges/891c2a24-50df-4aa1-9b14-c115e0afcace" target="_blank">Cisco - Junior Cybersecurity Analyst Career Path</a></strong>
+                    </div>
+                    <div class="achievement-item">
+                        <strong><a href="https://www.credly.com/badges/b53fbfe4-7678-4a07-bc6f-0551263be1c3" target="_blank">Cisco - Ethical Hacker Certificate</a></strong>
+                    </div>
+                    <div class="achievement-item">
+                        <strong><a href="https://www.credly.com/badges/12ebaf44-49f3-47b9-88e8-7fad3047d26f" target="_blank">Cisco - Introduction to Cybersecurity Certificate</a></strong>
+                    </div>
+                    <div class="achievement-item">
+                        <strong>SymfonyCasts:</strong> PHP Levels 1–3 (Jan–Mar 2024)
+                    </div>
+                    <div class="achievement-item">
+                        <strong>Marino College Student of the Year:</strong> 2018, 2019
+                    </div>
+                    <div class="achievement-item">
+                        <strong>Manager's Player of the Year:</strong> 2014/15
+                    </div>
+                </div>
+            </section>
+
+            <section id="interests">
+                <h2>Interests & Activities</h2>
+                <div class="interests">
+                    <ul>
+                        <li>Active participant in cybersecurity platforms: TryHackMe, HackTheBox, and Cryptohack</li>
+                        <li>Reading cybersecurity blogs, threat intelligence reports, and IT research articles</li>
+                        <li>Studying ISO standards such as 27001, 27037 to deepen cybersecurity expertise</li>
+                        <li>Maintaining physical fitness to support focus and performance in technical tasks</li>
+                        <li>Building discipline and resilience through structured training</li>
+                        <li>Practicing mindfulness and mental focus through journaling and goal setting</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Alexandru Andrei Diaconu. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleProject(header) {
+            const details = header.nextElementSibling;
+            const toggle = header.querySelector('.project-toggle');
+            
+            details.classList.toggle('active');
+            toggle.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
+            
