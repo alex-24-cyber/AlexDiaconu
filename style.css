@@ -628,13 +628,10 @@ li::marker {
     height: 100%;
     background: linear-gradient(180deg, #00ff9d, #38bdf8);
     transition: width 0.3s;
+    pointer-events: none; /* THIS IS THE KEY LINE - prevents blocking clicks */
+    z-index: 0;
 }
 
-.achievement-item:hover {
-    background: rgba(30,41,59,0.8);
-    box-shadow: 0 0 25px rgba(0,255,157,0.3);
-    transform: translateX(8px);
-}
 
 .achievement-item:hover::before {
     width: 100%;
@@ -643,6 +640,8 @@ li::marker {
 
 .achievement-item strong { 
     color: #38bdf8; 
+    position: relative;
+    z-index: 2; /* Make sure text is above the pseudo-element */
 }
 
 .achievement-item a {
@@ -650,8 +649,10 @@ li::marker {
     text-decoration: none;
     transition: all 0.3s;
     border-bottom: 1px solid transparent;
-    pointer-events: auto; 
-    cursor: pointer;
+    position: relative;
+    z-index: 2; /* Make sure link is clickable */
+    cursor: pointer; /* Ensure cursor shows as pointer */
+    pointer-events: auto; /* Explicitly allow clicks */
 }
 
 .achievement-item a:hover {
