@@ -3,480 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Diaconu | Cybersecurity Portofolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Courier New', monospace;
-            line-height: 1.6;
-            color: #e0e0e0;
-            background: #0a0e27;
-            min-height: 100vh;
-            position: relative;
-            overflow-x: hidden;
-        }
-
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: repeating-linear-gradient(
-                0deg,
-                transparent,
-                transparent 2px,
-                rgba(0, 255, 157, 0.03) 2px,
-                rgba(0, 255, 157, 0.03) 4px
-            );
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        nav {
-            background: rgba(15, 23, 42, 0.98);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 2px solid rgba(0, 255, 157, 0.3);
-            backdrop-filter: blur(10px);
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            list-style: none;
-            margin: 0;
-            flex-wrap: wrap;
-        }
-
-        nav li {
-            margin: 0;
-            padding: 0;
-        }
-
-        nav a {
-            color: #94a3b8;
-            text-decoration: none;
-            font-size: 0.95em;
-            padding: 8px 16px;
-            border-radius: 5px;
-            transition: all 0.3s;
-            border: 1px solid transparent;
-        }
-
-        nav a:hover {
-            color: #00ff9d;
-            background: rgba(0, 255, 157, 0.1);
-            border-color: rgba(0, 255, 157, 0.3);
-            text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
-        }
-
-        nav a::before {
-            content: "[ ";
-            color: #38bdf8;
-        }
-
-        nav a::after {
-            content: " ]";
-            color: #38bdf8;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            background: rgba(15, 23, 42, 0.95);
-            border-radius: 15px;
-            box-shadow: 0 0 50px rgba(0, 255, 157, 0.3), 0 0 100px rgba(56, 189, 248, 0.2);
-            overflow: hidden;
-            border: 2px solid rgba(0, 255, 157, 0.3);
-            position: relative;
-            z-index: 2;
-        }
-
-        header {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            color: #00ff9d;
-            padding: 50px 40px;
-            text-align: center;
-            border-bottom: 3px solid #00ff9d;
-            position: relative;
-        }
-
-        header::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #00ff9d, #38bdf8, #00ff9d, transparent);
-            animation: borderGlow 3s linear infinite;
-        }
-
-        @keyframes borderGlow {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
-        }
-
-        header h1 {
-            font-size: 2.8em;
-            margin-bottom: 10px;
-            font-weight: 700;
-            text-shadow: 0 0 20px rgba(0, 255, 157, 0.5);
-            letter-spacing: 2px;
-        }
-
-        .status {
-            color: #38bdf8;
-            font-size: 1.1em;
-            margin-top: 10px;
-        }
-
-        .status::before {
-            content: "> ";
-            color: #00ff9d;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 25px;
-            font-size: 0.95em;
-        }
-
-        .contact-info span, .contact-info a {
-            color: #94a3b8;
-            text-decoration: none;
-            transition: all 0.3s;
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
-
-        .contact-info a:hover {
-            color: #00ff9d;
-            background: rgba(0, 255, 157, 0.1);
-            text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
-        }
-
-        .content {
-            padding: 40px;
-        }
-
-        section {
-            margin-bottom: 40px;
-            animation: fadeIn 0.8s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        h2 {
-            color: #00ff9d;
-            font-size: 1.9em;
-            margin-bottom: 25px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #00ff9d;
-            display: inline-block;
-            text-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
-            letter-spacing: 1px;
-        }
-
-        h2::before {
-            content: "# ";
-            color: #38bdf8;
-        }
-
-        .summary {
-            background: rgba(30, 41, 59, 0.6);
-            padding: 25px;
-            border-radius: 10px;
-            border-left: 5px solid #00ff9d;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 15px rgba(0, 255, 157, 0.1);
-            color: #cbd5e1;
-        }
-
-        .education-item, .experience-item, .project-item {
-            margin-bottom: 30px;
-            padding: 20px;
-            background: rgba(30, 41, 59, 0.4);
-            border-radius: 10px;
-            border-left: 4px solid #38bdf8;
-            transition: all 0.3s;
-        }
-
-        .education-item:hover, .experience-item:hover, .project-item:hover {
-            background: rgba(30, 41, 59, 0.6);
-            border-left-color: #00ff9d;
-            box-shadow: 0 0 20px rgba(0, 255, 157, 0.2);
-        }
-
-        h3 {
-            color: #38bdf8;
-            font-size: 1.4em;
-            margin-bottom: 8px;
-            text-shadow: 0 0 8px rgba(56, 189, 248, 0.3);
-        }
-
-        h3::before {
-            content: ">> ";
-            color: #00ff9d;
-            font-size: 0.8em;
-        }
-
-        .project-badge {
-            display: inline-block;
-            background: rgba(0, 255, 157, 0.15);
-            color: #00ff9d;
-            padding: 4px 12px;
-            border-radius: 5px;
-            font-size: 0.75em;
-            margin-left: 10px;
-            border: 1px solid rgba(0, 255, 157, 0.3);
-        }
-
-        .project-header {
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            user-select: none;
-        }
-
-        .project-header:hover h3 {
-            color: #00ff9d;
-        }
-
-        .project-toggle {
-            color: #00ff9d;
-            font-size: 1.5em;
-            transition: transform 0.3s;
-            min-width: 30px;
-            text-align: center;
-        }
-
-        .project-toggle.active {
-            transform: rotate(180deg);
-        }
-
-        .project-details {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-out, opacity 0.3s ease-out, margin-top 0.3s ease-out;
-            opacity: 0;
-        }
-
-        .project-details.active {
-            max-height: 2000px;
-            opacity: 1;
-            margin-top: 15px;
-            transition: max-height 0.5s ease-in, opacity 0.4s ease-in, margin-top 0.3s ease-in;
-        }
-
-        .meta {
-            color: #94a3b8;
-            font-size: 0.9em;
-            margin-bottom: 12px;
-            font-style: italic;
-        }
-
-        .grades {
-            background: rgba(15, 23, 42, 0.6);
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 15px;
-            font-size: 0.9em;
-            border: 1px solid rgba(0, 255, 157, 0.2);
-            color: #cbd5e1;
-        }
-
-        ul {
-            margin-left: 20px;
-            margin-top: 12px;
-            color: #cbd5e1;
-        }
-
-        li {
-            margin-bottom: 10px;
-            position: relative;
-            padding-left: 10px;
-        }
-
-        li::marker {
-            color: #00ff9d;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .skill-category {
-            background: rgba(30, 41, 59, 0.5);
-            padding: 20px;
-            border-radius: 10px;
-            border: 2px solid rgba(56, 189, 248, 0.3);
-            transition: all 0.3s;
-        }
-
-        .skill-category:hover {
-            border-color: #00ff9d;
-            box-shadow: 0 0 25px rgba(0, 255, 157, 0.3);
-            transform: translateY(-5px);
-        }
-
-        .skill-category h4 {
-            color: #00ff9d;
-            margin-bottom: 12px;
-            font-size: 1.15em;
-            text-shadow: 0 0 8px rgba(0, 255, 157, 0.3);
-        }
-
-        .skill-category h4::before {
-            content: "[+] ";
-            color: #38bdf8;
-        }
-
-        .skill-category p {
-            color: #cbd5e1;
-            font-size: 0.9em;
-            line-height: 1.7;
-        }
-
-        .achievements {
-            display: grid;
-            gap: 18px;
-        }
-
-        .achievement-item {
-            background: rgba(30, 41, 59, 0.5);
-            padding: 18px;
-            border-radius: 10px;
-            border-left: 4px solid #00ff9d;
-            transition: all 0.3s;
-        }
-
-        .achievement-item:hover {
-            background: rgba(30, 41, 59, 0.7);
-            box-shadow: 0 0 20px rgba(0, 255, 157, 0.2);
-            transform: translateX(5px);
-        }
-
-        .achievement-item strong {
-            color: #38bdf8;
-        }
-
-        .achievement-item a {
-            color: #00ff9d;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-
-        .achievement-item a:hover {
-            color: #38bdf8;
-            text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
-        }
-
-        .interests {
-            background: rgba(30, 41, 59, 0.5);
-            padding: 25px;
-            border-radius: 10px;
-            border: 2px solid rgba(0, 255, 157, 0.3);
-        }
-
-        .interests ul {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 15px;
-            margin-left: 0;
-            list-style: none;
-        }
-
-        .interests li {
-            padding-left: 30px;
-            position: relative;
-            color: #cbd5e1;
-        }
-
-        .interests li:before {
-            content: "▸";
-            color: #00ff9d;
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-            font-size: 1.3em;
-        }
-
-        footer {
-            background: #0f172a;
-            color: #64748b;
-            text-align: center;
-            padding: 25px;
-            font-size: 0.9em;
-            border-top: 2px solid rgba(0, 255, 157, 0.3);
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2em;
-            }
-
-            .contact-info {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .content {
-                padding: 25px;
-            }
-
-            h2 {
-                font-size: 1.6em;
-            }
-
-            .skills-grid, .interests ul {
-                grid-template-columns: 1fr;
-            }
-
-            nav a {
-                padding: 6px 12px;
-                font-size: 0.85em;
-            }
-
-            .project-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .project-toggle {
-                align-self: flex-end;
-                margin-top: -30px;
-            }
-        }
-    </style>
+    <title>Alexandru Diaconu - Cybersecurity Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav>
-        <ul>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <ul id="mainMenu">
             <li><a href="#summary">Summary</a></li>
             <li><a href="#education">Education</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
+            <li class="dropdown">
+                <a href="#projects">Projects</a>
+                <div class="dropdown-content">
+                    <a href="#year4">Year 4 Projects</a>
+                    <a href="#year3">Year 3 Projects</a>
+                    <a href="#year2">Year 2 Projects</a>
+                    <a href="#year1">Year 1 Projects</a>
+                </div>
+            </li>
             <li><a href="#achievements">Achievements</a></li>
             <li><a href="#interests">Interests</a></li>
         </ul>
@@ -484,6 +31,7 @@
     
     <div class="container">
         <header>
+            <div class="header-bg"></div>
             <h1>ALEXANDRU ANDREI DIACONU</h1>
             <div class="status">Final Year Cybersecurity & Digital Forensics Student</div>
             <div class="contact-info">
@@ -508,10 +56,10 @@
                     <div class="meta">BSc Cybersecurity & Digital Forensics | 2022 – 2026 (Final Year)</div>
                     <p><strong style="color: #00ff9d;">GPA:</strong> Y1 – 3.46 | Y2 – 3.29 | Y3 – 3.00 | <strong style="color: #38bdf8;">Expected Graduation: 2026</strong></p>
                     <div class="grades">
-                        <strong style="color: #00ff9d;">Grades:</strong><br>
+                        <strong style="color: #00ff9d;">Notable Modules:</strong><br>
                         <strong>Year 4:</strong> In Progress<br>
                         <strong>Year 3:</strong> Secure Communications 85%, Group Project 80%<br>
-                        <strong>Year 2:</strong> Software Engineering and Testing 95%, IT Business Management 77%<br>
+                        <strong>Year 2:</strong> Software Engineering & Testing 95%, IT Business Management 77%, Databases, Operating Systems<br>
                         <strong>Year 1:</strong> Web Development Client-Side 86%, Algorithmic Problem Solving 80%
                     </div>
                 </div>
@@ -573,16 +121,78 @@
             <section id="projects">
                 <h2>Projects</h2>
                 
+                <!-- Year 4 Projects -->
+                <div class="year-divider" id="year4">
+                    <span>Year 4 - 2025/2026</span>
+                </div>
+
+                <div class="project-item upcoming">
+                    <div class="project-header" onclick="toggleProject(this)">
+                        <div>
+                            <h3>T-Pot & Hive Network Security Analysis <span class="project-badge upcoming-badge">Upcoming</span></h3>
+                            <div class="meta">T-Pot, TheHive, Cortex, Network Security | Spring 2026</div>
+                        </div>
+                        <span class="project-toggle">▼</span>
+                    </div>
+                    <div class="project-details">
+                        <p style="color: #cbd5e1; margin-bottom: 12px;">Advanced honeypot deployment integrated with TheHive case management for comprehensive threat analysis.</p>
+                        <ul>
+                            <li>Deploy T-Pot honeypot infrastructure with multiple service emulations</li>
+                            <li>Integrate TheHive for incident response and case management</li>
+                            <li>Implement Cortex analyzers for automated threat intelligence enrichment</li>
+                            <li>Develop custom playbooks for attack pattern analysis and reporting</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-item upcoming">
+                    <div class="project-header" onclick="toggleProject(this)">
+                        <div>
+                            <h3>SAST/DAST Application Security Testing <span class="project-badge upcoming-badge">Upcoming</span></h3>
+                            <div class="meta">SonarQube, OWASP ZAP, Burp Suite, Application Security | Spring 2026</div>
+                        </div>
+                        <span class="project-toggle">▼</span>
+                    </div>
+                    <div class="project-details">
+                        <p style="color: #cbd5e1; margin-bottom: 12px;">Comprehensive application security analysis using Static and Dynamic testing methodologies.</p>
+                        <ul>
+                            <li>Perform Static Application Security Testing (SAST) using SonarQube</li>
+                            <li>Conduct Dynamic Application Security Testing (DAST) with OWASP ZAP</li>
+                            <li>Identify and document vulnerabilities across the SDLC</li>
+                            <li>Create security remediation recommendations and reports</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-item upcoming">
+                    <div class="project-header" onclick="toggleProject(this)">
+                        <div>
+                            <h3>FAR/FRR Biometric Testing Framework <span class="project-badge upcoming-badge">Upcoming</span></h3>
+                            <div class="meta">Python, OpenCV, Face Recognition, Biometrics | Spring 2026</div>
+                        </div>
+                        <span class="project-toggle">▼</span>
+                    </div>
+                    <div class="project-details">
+                        <p style="color: #cbd5e1; margin-bottom: 12px;">Facial recognition system evaluation measuring False Accept Rate (FAR) and False Reject Rate (FRR).</p>
+                        <ul>
+                            <li>Develop testing framework for biometric authentication systems</li>
+                            <li>Measure and analyze FAR/FRR metrics across different scenarios</li>
+                            <li>Test against various lighting conditions and facial variations</li>
+                            <li>Document findings and security implications for biometric systems</li>
+                        </ul>
+                    </div>
+                </div>
+
                 <div class="project-item">
                     <div class="project-header" onclick="toggleProject(this)">
                         <div>
-                            <h3>T-Pot Honeypot Deployment <span class="project-badge">Year 4</span></h3>
+                            <h3>T-Pot Honeypot Deployment <span class="project-badge">Year 4 | Fall 2025</span></h3>
                             <div class="meta">T-Pot, Docker, ELK Stack, Network Security</div>
                         </div>
                         <span class="project-toggle">▼</span>
                     </div>
                     <div class="project-details">
-                        <p style="color: #cbd5e1; margin-bottom: 12px;">Deployed and monitored a multi-honeypot platform to capture and analyze real-world cyberattack patterns.</p>
+                        <p style="color: #cbd5e1; margin-bottom: 12px;">Deployed and monitored multi-honeypot platform to capture and analyze real-world cyberattack patterns.</p>
                         <ul>
                             <li>Set up T-Pot honeypot system with multiple services (SSH, HTTP, SMB) to attract malicious traffic</li>
                             <li>Analyzed attacker behavior patterns, exploitation techniques, and malware samples</li>
@@ -592,22 +202,27 @@
                     </div>
                 </div>
 
+                <!-- Year 3 Projects -->
+                <div class="year-divider" id="year3">
+                    <span>Year 3 - 2024/2025</span>
+                </div>
+
                 <div class="project-item">
                     <div class="project-header" onclick="toggleProject(this)">
                         <div>
-                            <h3>ReconBot - OSINT Discord Bot <span class="project-badge">Year 3 • Grade: A (80%)</span></h3>
+                            <h3>ReconBot - OSINT Discord Bot <span class="project-badge">Year 3 | Spring 2025</span></h3>
                             <div class="meta">Python, Discord.py, OpenAI API, OSINT Tools | Jan – May 2025</div>
                         </div>
                         <span class="project-toggle">▼</span>
                     </div>
                     <div class="project-details">
-                        <p style="color: #cbd5e1; margin-bottom: 12px;">Developed a modular Discord bot to democratize OSINT capabilities and cybersecurity education through an accessible platform.</p>
+                        <p style="color: #cbd5e1; margin-bottom: 12px;">Developed modular Discord bot to democratize OSINT capabilities and cybersecurity education.</p>
                         <ul>
-                            <li><strong>AI-Powered Intelligence:</strong> Integrated GPT-4o-mini for automated analysis of WHOIS data, email breaches, and password security with contextual recommendations</li>
-                            <li><strong>Comprehensive OSINT Toolkit:</strong> Implemented 8+ commands including IP geolocation, breach checking (LeakCheck & HaveIBeenPwned APIs), port scanning, and Google Dorking assistance</li>
-                            <li><strong>Security-First Design:</strong> Used K-anonymity for password checking, ephemeral Discord messages for sensitive data, and ethical usage warnings</li>
-                            <li><strong>Asynchronous Architecture:</strong> Built with Discord.py's async capabilities to handle concurrent user queries efficiently</li>
-                            <li><strong>Team Leadership:</strong> Collaborated with 2 teammates, managed version control via GitHub, and delivered comprehensive 82-page technical documentation</li>
+                            <li><strong>AI-Powered Intelligence:</strong> Integrated GPT-4o-mini for automated analysis of WHOIS data, email breaches, password security</li>
+                            <li><strong>8+ OSINT Commands:</strong> IP geolocation, breach checking (LeakCheck & HaveIBeenPwned APIs), port scanning, Google Dorking</li>
+                            <li><strong>Security-First Design:</strong> K-anonymity for password checking, ephemeral Discord messages, ethical usage warnings</li>
+                            <li><strong>Asynchronous Architecture:</strong> Built with Discord.py's async capabilities for concurrent user queries</li>
+                            <li><strong>Team Leadership:</strong> Collaborated with 2 teammates, GitHub version control, 82-page technical documentation</li>
                         </ul>
                     </div>
                 </div>
@@ -615,38 +230,43 @@
                 <div class="project-item">
                     <div class="project-header" onclick="toggleProject(this)">
                         <div>
-                            <h3>Network Security & Firewall Configuration <span class="project-badge">Year 3</span></h3>
-                            <div class="meta">nftables, IPFire, Wireshark, hping3, Linux | Network Security CA</div>
+                            <h3>Network Security & Firewall Configuration <span class="project-badge">Year 3 | Fall 2024</span></h3>
+                            <div class="meta">nftables, IPFire, Wireshark, hping3, Linux</div>
                         </div>
                         <span class="project-toggle">▼</span>
                     </div>
                     <div class="project-details">
-                        <p style="color: #cbd5e1; margin-bottom: 12px;">Comprehensive security assessment and implementation of firewall solutions to protect against attacks.</p>
+                        <p style="color: #cbd5e1; margin-bottom: 12px;">Security assessment and firewall implementation to protect against network attacks.</p>
                         <ul>
-                            <li><strong>Attack Simulation:</strong> Executed TCP SYN flood attacks and reconnaissance scans (Nmap port scans, ping sweeps) on virtualized network</li>
-                            <li><strong>Firewall Comparison:</strong> Configured and tested both nftables and IPFire, implementing rate-limiting rules, stateful inspection, and drop policies</li>
-                            <li><strong>Custom nftables Configuration:</strong> Implemented custom rulesets for packet filtering, traffic management, and DoS attack mitigation</li>
-                            <li><strong>Traffic Analysis:</strong> Used tcpdump and Wireshark to capture and analyze attack patterns and firewall effectiveness</li>
-                            <li><strong>Comparative Evaluation:</strong> Documented performance differences, ease of configuration, and security effectiveness between both firewall solutions</li>
+                            <li><strong>Attack Simulation:</strong> TCP SYN flood attacks, Nmap port scans, ping sweeps on virtualized network</li>
+                            <li><strong>Firewall Comparison:</strong> Configured nftables & IPFire with rate-limiting, stateful inspection, drop policies</li>
+                            <li><strong>Custom Configuration:</strong> Custom rulesets for packet filtering, traffic management, DoS mitigation</li>
+                            <li><strong>Traffic Analysis:</strong> tcpdump & Wireshark for attack pattern analysis and effectiveness testing</li>
+                            <li><strong>Documentation:</strong> Comparative evaluation of performance and security between solutions</li>
                         </ul>
                     </div>
+                </div>
+
+                <!-- Year 2 Projects -->
+                <div class="year-divider" id="year2">
+                    <span>Year 2 - 2023/2024</span>
                 </div>
 
                 <div class="project-item">
                     <div class="project-header" onclick="toggleProject(this)">
                         <div>
-                            <h3>GymGo - Gym Management System <span class="project-badge">Year 2</span></h3>
-                            <div class="meta">PHP, MySQL, HTML, CSS</div>
+                            <h3>GymGo - Gym Management System <span class="project-badge">Year 2 | Spring 2024</span></h3>
+                            <div class="meta">PHP, MySQL, HTML, CSS | Databases Module</div>
                         </div>
                         <span class="project-toggle">▼</span>
                     </div>
                     <div class="project-details">
-                        <p style="color: #cbd5e1; margin-bottom: 12px;">Full-stack web application for managing gym memberships and class scheduling.</p>
+                        <p style="color: #cbd5e1; margin-bottom: 12px;">Full-stack web application for gym membership and class scheduling management.</p>
                         <ul>
-                            <li>Developed dynamic PHP backend with MySQL database integration</li>
-                            <li>Created member tracking system with CRUD operations</li>
-                            <li>Implemented class scheduling and booking functionality</li>
-                            <li>Designed responsive user interface with HTML/CSS</li>
+                            <li>Dynamic PHP backend with MySQL database integration</li>
+                            <li>Member tracking system with full CRUD operations</li>
+                            <li>Class scheduling and booking functionality</li>
+                            <li>Responsive user interface with HTML/CSS</li>
                         </ul>
                     </div>
                 </div>
@@ -654,44 +274,49 @@
                 <div class="project-item">
                     <div class="project-header" onclick="toggleProject(this)">
                         <div>
-                            <h3>Dining Philosophers Problem <span class="project-badge">Year 2</span></h3>
-                            <div class="meta">Java, Concurrency, Threading</div>
+                            <h3>Dining Philosophers Problem <span class="project-badge">Year 2 | Fall 2023</span></h3>
+                            <div class="meta">Java, Concurrency, Threading | Operating Systems Module</div>
                         </div>
                         <span class="project-toggle">▼</span>
                     </div>
                     <div class="project-details">
-                        <p style="color: #cbd5e1; margin-bottom: 12px;">Implemented a classic concurrency problem demonstrating resource sharing and deadlock avoidance.</p>
+                        <p style="color: #cbd5e1; margin-bottom: 12px;">Classic concurrency problem implementation demonstrating resource sharing and deadlock avoidance.</p>
                         <ul>
-                            <li>Simulated multi-threaded environment with shared resources</li>
-                            <li>Implemented deadlock prevention mechanisms</li>
-                            <li>Demonstrated understanding of synchronization and thread safety</li>
+                            <li>Multi-threaded environment simulation with shared resources</li>
+                            <li>Deadlock prevention mechanism implementation</li>
+                            <li>Synchronization and thread safety demonstration</li>
                         </ul>
                     </div>
+                </div>
+
+                <!-- Year 1 Projects -->
+                <div class="year-divider" id="year1">
+                    <span>Year 1 - 2022/2023</span>
                 </div>
 
                 <div class="project-item">
                     <div class="project-header" onclick="toggleProject(this)">
                         <div>
-                            <h3>Java Coffee Shop POS <span class="project-badge">Year 1</span></h3>
+                            <h3>Java Coffee Shop POS <span class="project-badge">Year 1 | Spring 2023</span></h3>
                             <div class="meta">Java, Swing GUI</div>
                         </div>
                         <span class="project-toggle">▼</span>
                     </div>
                     <div class="project-details">
-                        <p style="color: #cbd5e1; margin-bottom: 12px;">Designed a point-of-sale system with GUI for order processing and receipt generation.</p>
+                        <p style="color: #cbd5e1; margin-bottom: 12px;">Point-of-sale system with GUI for order processing and receipt generation.</p>
                     </div>
                 </div>
 
                 <div class="project-item">
                     <div class="project-header" onclick="toggleProject(this)">
                         <div>
-                            <h3>Personal Portfolio Website <span class="project-badge">Year 1</span></h3>
+                            <h3>Personal Portfolio Website <span class="project-badge">Year 1 | Fall 2022</span></h3>
                             <div class="meta">HTML, CSS, Responsive Design</div>
                         </div>
                         <span class="project-toggle">▼</span>
                     </div>
                     <div class="project-details">
-                        <p style="color: #cbd5e1; margin-bottom: 12px;">Built a responsive personal website showcasing academic projects and interests.</p>
+                        <p style="color: #cbd5e1; margin-bottom: 12px;">Responsive website showcasing academic projects and interests.</p>
                     </div>
                 </div>
             </section>
@@ -749,15 +374,6 @@
         </footer>
     </div>
 
-    <script>
-        function toggleProject(header) {
-            const details = header.nextElementSibling;
-            const toggle = header.querySelector('.project-toggle');
-            
-            details.classList.toggle('active');
-            toggle.classList.toggle('active');
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
-            
