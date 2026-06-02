@@ -4,211 +4,258 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alexandru Diaconu | Cybersecurity Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Progress Bar -->
+    <!-- Scroll Progress -->
     <div class="scroll-progress"></div>
+
+    <!-- Matrix Rain Canvas -->
+    <canvas id="matrix" class="matrix-canvas"></canvas>
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#home" class="nav-logo">AD<span>.</span></a>
+            <a href="#home" class="nav-logo"><span class="bracket">[</span>AD<span class="at">@</span>portfolio<span class="bracket">]</span></a>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#achievements" class="nav-link">Achievements</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#home"         class="nav-link"><span class="nav-pre">~/</span>home</a></li>
+                <li><a href="#about"        class="nav-link"><span class="nav-pre">~/</span>about</a></li>
+                <li><a href="#experience"   class="nav-link"><span class="nav-pre">~/</span>experience</a></li>
+                <li><a href="#skills"       class="nav-link"><span class="nav-pre">~/</span>skills</a></li>
+                <li><a href="#projects"     class="nav-link"><span class="nav-pre">~/</span>projects</a></li>
+                <li><a href="#achievements" class="nav-link"><span class="nav-pre">~/</span>achievements</a></li>
+                <li><a href="#contact"      class="nav-link"><span class="nav-pre">~/</span>contact</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-background">
-            <div class="gradient-orb orb-1"></div>
-            <div class="gradient-orb orb-2"></div>
-            <div class="gradient-orb orb-3"></div>
-        </div>
         <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-tag">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>Cybersecurity Professional</span>
+
+            <!-- Main terminal window -->
+            <div class="term-win hero-term">
+                <div class="term-bar">
+                    <div class="term-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+                    <span class="term-title">bash — ~/portfolio — Alexandru Diaconu</span>
                 </div>
-                <h1 class="hero-title">
-                    Hi, I'm <span class="gradient-text">Alexandru Diaconu</span>
-                </h1>
-                <p class="hero-subtitle">Final Year Cybersecurity & Digital Forensics Student</p>
-                <p class="hero-description">
-                    Passionate about threat detection, penetration testing, and digital forensics.
-                    Active CTF participant with hands-on experience in security tools and programming.
-                    <strong class="highlight">Looking for internships and graduate programmes for 2026!</strong>
-                </p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">
-                        <span>Get In Touch</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="#projects" class="btn btn-secondary">
-                        <span>View Projects</span>
-                        <i class="fas fa-folder-open"></i>
-                    </a>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="15">0</div>
-                        <div class="stat-label">Projects</div>
+                <div class="term-body">
+                    <div class="cmd-line">
+                        <span class="c-prompt">root@kali</span><span class="c-sep">:</span><span class="c-path">~</span><span class="c-dollar">$</span>
+                        <span class="c-cmd">whoami</span>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="13">0</div>
-                        <div class="stat-label">Certifications</div>
+                    <div class="hero-tag">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Cybersecurity Professional</span>
+                    </div>
+                    <h1 class="hero-title glitch" data-text="Alexandru Diaconu">Alexandru Diaconu</h1>
+                    <div class="cmd-line">
+                        <span class="c-prompt">root@kali</span><span class="c-sep">:</span><span class="c-path">~</span><span class="c-dollar">$</span>
+                        <span class="c-cmd">cat description.txt</span>
+                    </div>
+                    <p class="hero-subtitle">Final Year Cybersecurity &amp; Digital Forensics Student<span class="blink-cursor">_</span></p>
+                    <p class="hero-description">
+                        Passionate about threat detection, penetration testing, and digital forensics.
+                        Active CTF participant with hands-on experience in security tools and programming.
+                        <span class="highlight">Looking for internships and graduate programmes for 2026!</span>
+                    </p>
+                    <div class="cmd-line">
+                        <span class="c-prompt">root@kali</span><span class="c-sep">:</span><span class="c-path">~</span><span class="c-dollar">$</span>
+                        <span class="c-cmd">./connect.sh</span>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">
+                            <span>Get In Touch</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#projects" class="btn btn-secondary">
+                            <span>View Projects</span>
+                            <i class="fas fa-folder-open"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="hero-visual">
-                <div class="floating-card card-1">
-                    <i class="fas fa-code"></i>
-                    <span>Python</span>
+
+            <!-- Right panel -->
+            <div class="hero-right">
+
+                <!-- Neofetch terminal -->
+                <div class="term-win">
+                    <div class="term-bar">
+                        <div class="term-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+                        <span class="term-title">neofetch</span>
+                    </div>
+                    <div class="term-body">
+                        <div class="neofetch-output">
+                            <div class="nf-logo">AD</div>
+                            <div class="nf-info">
+                                <div class="nf-row"><span class="nf-key">Name</span><span class="nf-sep">:</span><span class="nf-val">Alexandru Diaconu</span></div>
+                                <div class="nf-row"><span class="nf-key">Role</span><span class="nf-sep">:</span><span class="nf-val">Cybersecurity Student</span></div>
+                                <div class="nf-row"><span class="nf-key">OS</span><span class="nf-sep">:</span><span class="nf-val">Kali / Windows</span></div>
+                                <div class="nf-row"><span class="nf-key">Location</span><span class="nf-sep">:</span><span class="nf-val">Dublin, Ireland</span></div>
+                                <div class="nf-row"><span class="nf-key">Projects</span><span class="nf-sep">:</span><span class="nf-val stat-number" data-target="15">0</span></div>
+                                <div class="nf-row"><span class="nf-key">Certs</span><span class="nf-sep">:</span><span class="nf-val stat-number" data-target="13">0</span></div>
+                                <div class="nf-row"><span class="nf-key">CTF</span><span class="nf-sep">:</span><span class="nf-val">Active competitor</span></div>
+                                <div class="nf-row"><span class="nf-key">Status</span><span class="nf-sep">:</span><span class="nf-val status-available">Available for hire</span></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="floating-card card-2">
-                    <i class="fas fa-network-wired"></i>
-                    <span>Network Security</span>
+
+                <!-- Skills mini terminal -->
+                <div class="term-win">
+                    <div class="term-bar">
+                        <div class="term-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+                        <span class="term-title">top_skills.sh</span>
+                    </div>
+                    <div class="floating-skills">
+                        <div class="float-skill"><i class="fas fa-shield-alt"></i> Penetration Testing</div>
+                        <div class="float-skill"><i class="fas fa-code"></i> Python</div>
+                        <div class="float-skill"><i class="fas fa-network-wired"></i> Network Security</div>
+                        <div class="float-skill"><i class="fas fa-search"></i> Digital Forensics</div>
+                    </div>
                 </div>
-                <div class="floating-card card-3">
-                    <i class="fas fa-bug"></i>
-                    <span>Penetration Testing</span>
-                </div>
-                <div class="floating-card card-4">
-                    <i class="fas fa-search"></i>
-                    <span>Digital Forensics</span>
-                </div>
-                <div class="hero-shape"></div>
+
             </div>
         </div>
+
         <div class="scroll-indicator">
-            <div class="mouse"></div>
-            <span>Scroll to explore</span>
+            <div class="scroll-text">[ scroll to explore ]</div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section">
+    <section id="about" class="section section-alt">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Get to know me</span>
+                <div class="section-cmd">
+                    <span class="s-prompt">root@kali</span><span class="s-sep">:</span><span class="s-path">~/about</span><span class="s-dollar">$</span>
+                    <span class="s-cmd">cat profile.md</span>
+                </div>
                 <h2 class="section-title">About Me</h2>
             </div>
             <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        Final year Cybersecurity & Digital Forensics student with hands-on experience in Python,
-                        forensic tools and network simulation. Active in CTFs and platforms like TryHackMe and Cryptohack.
-                        Strong analytical and teamwork abilities, with a passion for applying threat detection and forensic
-                        investigation techniques in real-world scenarios.
-                    </p>
-                    <div class="about-highlights">
-                        <div class="highlight-item">
-                            <i class="fas fa-graduation-cap"></i>
-                            <div>
-                                <strong>Education</strong>
-                                <span>BSc Cybersecurity & Digital Forensics</span>
-                            </div>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <strong>Location</strong>
-                                <span>Dublin, Ireland</span>
-                            </div>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-language"></i>
-                            <div>
-                                <strong>Languages</strong>
-                                <span>English (Fluent), Romanian (Native)</span>
+
+                <div class="term-win about-term">
+                    <div class="term-bar">
+                        <div class="term-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+                        <span class="term-title">profile.md — read-only</span>
+                    </div>
+                    <div class="term-body">
+                        <div class="about-text">
+                            <p>
+                                Final year Cybersecurity &amp; Digital Forensics student with hands-on experience in Python,
+                                forensic tools and network simulation. Active in CTFs and platforms like TryHackMe and Cryptohack.
+                                Strong analytical and teamwork abilities, with a passion for applying threat detection and forensic
+                                investigation techniques in real-world scenarios.
+                            </p>
+                            <div class="about-highlights">
+                                <div class="highlight-item">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <div>
+                                        <strong>Education</strong>
+                                        <span>BSc Cybersecurity &amp; Digital Forensics</span>
+                                    </div>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <div>
+                                        <strong>Location</strong>
+                                        <span>Dublin, Ireland</span>
+                                    </div>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-language"></i>
+                                    <div>
+                                        <strong>Languages</strong>
+                                        <span>English (Fluent), Romanian (Native)</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="about-interests">
-                    <h3>Interests & Activities</h3>
-                    <div class="interests-grid">
-                        <div class="interest-card">
-                            <i class="fas fa-flag"></i>
-                            <span>CTF Competitions</span>
-                        </div>
-                        <div class="interest-card">
-                            <i class="fas fa-book-open"></i>
-                            <span>Security Research</span>
-                        </div>
-                        <div class="interest-card">
-                            <i class="fas fa-certificate"></i>
-                            <span>ISO Standards</span>
-                        </div>
-                        <div class="interest-card">
-                            <i class="fas fa-dumbbell"></i>
-                            <span>Fitness Training</span>
-                        </div>
-                        <div class="interest-card">
-                            <i class="fas fa-brain"></i>
-                            <span>Mindfulness</span>
-                        </div>
-                        <div class="interest-card">
-                            <i class="fas fa-laptop-code"></i>
-                            <span>TryHackMe</span>
+
+                <div class="term-win interests-term">
+                    <div class="term-bar">
+                        <div class="term-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+                        <span class="term-title">interests.json</span>
+                    </div>
+                    <div class="term-body">
+                        <div class="about-interests">
+                            <h3>// interests &amp; activities</h3>
+                            <div class="interests-grid">
+                                <div class="interest-card">
+                                    <i class="fas fa-flag"></i>
+                                    <span>CTF Competitions</span>
+                                </div>
+                                <div class="interest-card">
+                                    <i class="fas fa-book-open"></i>
+                                    <span>Security Research</span>
+                                </div>
+                                <div class="interest-card">
+                                    <i class="fas fa-certificate"></i>
+                                    <span>ISO Standards</span>
+                                </div>
+                                <div class="interest-card">
+                                    <i class="fas fa-dumbbell"></i>
+                                    <span>Fitness Training</span>
+                                </div>
+                                <div class="interest-card">
+                                    <i class="fas fa-brain"></i>
+                                    <span>Mindfulness</span>
+                                </div>
+                                <div class="interest-card">
+                                    <i class="fas fa-laptop-code"></i>
+                                    <span>TryHackMe</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="section section-alt">
+    <section id="experience" class="section">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">My Journey</span>
-                <h2 class="section-title">Education & Experience</h2>
+                <div class="section-cmd">
+                    <span class="s-prompt">root@kali</span><span class="s-sep">:</span><span class="s-path">~/experience</span><span class="s-dollar">$</span>
+                    <span class="s-cmd">cat timeline.log</span>
+                </div>
+                <h2 class="section-title">Education &amp; Experience</h2>
             </div>
             <div class="timeline">
-                <!-- Education -->
+
                 <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
+                    <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
                     <div class="timeline-content">
                         <span class="timeline-date">2022 – 2026</span>
-                        <h3>BSc Cybersecurity & Digital Forensics</h3>
+                        <h3>BSc Cybersecurity &amp; Digital Forensics</h3>
                         <h4>Technological University Dublin</h4>
                         <p><strong>GPA:</strong> Y1 – 1.1 | Y2 – 1.1 | Y3 – 1.1 | <strong>Expected Graduation: 2026</strong></p>
                         <div class="timeline-details">
                             <p><strong>Notable Modules:</strong></p>
                             <ul>
-                                <li><strong>Year 4:</strong> Network Security 70%, Biometrics & Forensics Applications 75%</li>
+                                <li><strong>Year 4:</strong> Network Security 70%, Biometrics &amp; Forensics Applications 75%</li>
                                 <li><strong>Year 3:</strong> Secure Communications 85%, Group Project 80%</li>
-                                <li><strong>Year 2:</strong> Software Engineering & Testing 95%, IT Business Management 77%, Databases 83%, Operating Systems 78%</li>
+                                <li><strong>Year 2:</strong> Software Engineering &amp; Testing 95%, IT Business Management 77%, Databases 83%, Operating Systems 78%</li>
                                 <li><strong>Year 1:</strong> Web Development Client-Side 86%, Algorithmic Problem Solving 80%</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <!-- Frensei Internship -->
                 <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
+                    <div class="timeline-icon"><i class="fas fa-shield-alt"></i></div>
                     <div class="timeline-content">
                         <span class="timeline-date">2026 – Present | Remote</span>
                         <h3>Cybersecurity Intern</h3>
@@ -225,11 +272,8 @@
                     </div>
                 </div>
 
-                <!-- Student Ambassador -->
                 <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
+                    <div class="timeline-icon"><i class="fas fa-users"></i></div>
                     <div class="timeline-content">
                         <span class="timeline-date">Sep 2023 – Present</span>
                         <h3>Student Ambassador</h3>
@@ -241,11 +285,8 @@
                     </div>
                 </div>
 
-                <!-- Retail Assistant -->
                 <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
+                    <div class="timeline-icon"><i class="fas fa-shopping-cart"></i></div>
                     <div class="timeline-content">
                         <span class="timeline-date">Feb 2023 – Present</span>
                         <h3>Retail Assistant</h3>
@@ -258,125 +299,141 @@
                         </ul>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section">
+    <section id="skills" class="section section-alt">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">What I know</span>
+                <div class="section-cmd">
+                    <span class="s-prompt">root@kali</span><span class="s-sep">:</span><span class="s-path">~/skills</span><span class="s-dollar">$</span>
+                    <span class="s-cmd">ls -la skills/</span>
+                </div>
                 <h2 class="section-title">Technical Skills</h2>
             </div>
             <div class="skills-grid">
+
                 <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-user-secret"></i>
+                    <div class="skill-card-bar">
+                        <div class="term-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+                        <span class="term-title">pentest.sh</span>
                     </div>
-                    <h3>Penetration Testing</h3>
-                    <div class="skill-tags">
-                        <span>Nmap</span>
-                        <span>Wireshark</span>
-                        <span>HashCat</span>
-                        <span>JohnTheRipper</span>
-                        <span>Burp Suite</span>
-                        <span>Metasploitable</span>
-                        <span>Packet Tracer</span>
+                    <div class="skill-card-body">
+                        <div class="skill-icon"><i class="fas fa-user-secret"></i></div>
+                        <h3>Penetration Testing</h3>
+                        <div class="skill-tags">
+                            <span>Nmap</span><span>Wireshark</span><span>HashCat</span>
+                            <span>JohnTheRipper</span><span>Burp Suite</span><span>Metasploitable</span>
+                            <span>Packet Tracer</span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-code"></i>
+                    <div class="skill-card-bar">
+                        <div class="term-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+                        <span class="term-title">programming.sh</span>
                     </div>
-                    <h3>Programming</h3>
-                    <div class="skill-tags">
-                        <span>Python</span>
-                        <span>PHP</span>
-                        <span>JavaScript</span>
-                        <span>HTML/CSS</span>
-                        <span>SQL</span>
-                        <span>Java</span>
-                    </div>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-desktop"></i>
-                    </div>
-                    <h3>Operating Systems</h3>
-                    <div class="skill-tags">
-                        <span>Windows</span>
-                        <span>Kali Linux</span>
-                        <span>Mageia</span>
+                    <div class="skill-card-body">
+                        <div class="skill-icon"><i class="fas fa-code"></i></div>
+                        <h3>Programming</h3>
+                        <div class="skill-tags">
+                            <span>Python</span><span>PHP</span><span>JavaScript</span>
+                            <span>HTML/CSS</span><span>SQL</span><span>Java</span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-search"></i>
+                    <div class="skill-card-bar">
+                        <div class="term-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+                        <span class="term-title">os.sh</span>
                     </div>
-                    <h3>Digital Forensics</h3>
-                    <div class="skill-tags">
-                        <span>Autopsy</span>
-                        <span>FTK Imager</span>
-                        <span>AccessData Forensic Toolkit</span>
-                    </div>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <h3>SIEM Tools</h3>
-                    <div class="skill-tags">
-                        <span>Wazuh</span>
-                        <span>Elastic Stack</span>
-                        <span>Suricata</span>
-                        <span>OSSEC</span>
-                        <span>Splunk</span>
-                        <span>QRadar</span>
+                    <div class="skill-card-body">
+                        <div class="skill-icon"><i class="fas fa-desktop"></i></div>
+                        <h3>Operating Systems</h3>
+                        <div class="skill-tags">
+                            <span>Windows</span><span>Kali Linux</span><span>Mageia</span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-shield-alt"></i>
+                    <div class="skill-card-bar">
+                        <div class="term-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+                        <span class="term-title">forensics.sh</span>
                     </div>
-                    <h3>Security Practices</h3>
-                    <div class="skill-tags">
-                        <span>OWASP Top 10</span>
-                        <span>Secure Coding</span>
-                        <span>DevSecOps</span>
+                    <div class="skill-card-body">
+                        <div class="skill-icon"><i class="fas fa-search"></i></div>
+                        <h3>Digital Forensics</h3>
+                        <div class="skill-tags">
+                            <span>Autopsy</span><span>FTK Imager</span><span>AccessData Forensic Toolkit</span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-users-cog"></i>
+                    <div class="skill-card-bar">
+                        <div class="term-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+                        <span class="term-title">siem.sh</span>
                     </div>
-                    <h3>Soft Skills</h3>
-                    <div class="skill-tags">
-                        <span>Teamwork</span>
-                        <span>Time Management</span>
-                        <span>Communication</span>
-                        <span>Adaptability</span>
+                    <div class="skill-card-body">
+                        <div class="skill-icon"><i class="fas fa-chart-bar"></i></div>
+                        <h3>SIEM Tools</h3>
+                        <div class="skill-tags">
+                            <span>Wazuh</span><span>Elastic Stack</span><span>Suricata</span>
+                            <span>OSSEC</span><span>Splunk</span><span>QRadar</span>
+                        </div>
                     </div>
                 </div>
+
+                <div class="skill-card">
+                    <div class="skill-card-bar">
+                        <div class="term-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+                        <span class="term-title">security.sh</span>
+                    </div>
+                    <div class="skill-card-body">
+                        <div class="skill-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3>Security Practices</h3>
+                        <div class="skill-tags">
+                            <span>OWASP Top 10</span><span>Secure Coding</span><span>DevSecOps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-card-bar">
+                        <div class="term-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+                        <span class="term-title">soft_skills.sh</span>
+                    </div>
+                    <div class="skill-card-body">
+                        <div class="skill-icon"><i class="fas fa-users-cog"></i></div>
+                        <h3>Soft Skills</h3>
+                        <div class="skill-tags">
+                            <span>Teamwork</span><span>Time Management</span>
+                            <span>Communication</span><span>Adaptability</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section section-alt">
+    <section id="projects" class="section">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">My Work</span>
+                <div class="section-cmd">
+                    <span class="s-prompt">root@kali</span><span class="s-sep">:</span><span class="s-path">~/projects</span><span class="s-dollar">$</span>
+                    <span class="s-cmd">find . -name "*.proj" | sort</span>
+                </div>
                 <h2 class="section-title">Projects</h2>
             </div>
 
-            <!-- Project Filters -->
             <div class="project-filters">
                 <button class="filter-btn active" data-filter="all">All Projects</button>
                 <button class="filter-btn" data-filter="year4">Year 4</button>
@@ -386,387 +443,395 @@
             </div>
 
             <div class="projects-grid">
-                <!-- Year 4 Projects -->
+
+                <!-- Year 4 -->
                 <div class="project-card" data-category="year4">
-                    <div class="project-header-card">
-                        <div class="project-icon">
-                            <i class="fas fa-graduation-cap"></i>
+                    <div class="project-card-bar">
+                        <div class="term-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+                        <span class="term-title">typosquatting_analysis.py</span>
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-header-card">
+                            <div class="project-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <span class="project-badge">Thesis</span>
                         </div>
-                        <span class="project-badge">Thesis</span>
-                    </div>
-                    <h3>Typosquatting Analysis on Irish Companies</h3>
-                    <p class="project-period">Sep 2025 - Apr 2026</p>
-                    <p class="project-desc">Final-year dissertation analysing typosquatting exposure across 15 high-profile Irish brands using a multi-tool passive-reconnaissance pipeline.</p>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>HIBS Pro</span>
-                        <span>dnstwist</span>
-                        <span>VirusTotal</span>
-                        <span>DNS/WHOIS</span>
-                    </div>
-                    <button class="project-expand" onclick="toggleProjectDetails(this)">
-                        <span>View Details</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="project-details-content">
-                        <ul>
-                            <li>Designed and executed a three-stage passive-reconnaissance pipeline across 15 Irish seed domains spanning five economic sectors, producing 2,432 permutations and 2,087 registered variants</li>
-                            <li>Identified a 7.3× cross-tool divergence in registered-variant counts (CIRCL vs HIBS Pro vs dnstwist), demonstrating that single-tool typosquatting studies systematically miscount exposure</li>
-                            <li>Quantified sector-level exposure patterns, finding Government Services had the highest phishing classification rate (9.13%) and that only 18.2% of .ie variants remain within the .ie namespace</li>
-                            <li>Conducted multi-source case study on bankofiireland.com showing convergent malicious classification across six independent platforms including VirusTotal, AbuseIPDB and Spamhaus</li>
-                            <li>Delivered in full GDPR compliance using passive reconnaissance only, with findings directly informing takedown recommendations for Irish brand owners and the NCSC-IE</li>
-                        </ul>
+                        <h3>Typosquatting Analysis on Irish Companies</h3>
+                        <p class="project-period">Sep 2025 - Apr 2026</p>
+                        <p class="project-desc">Final-year dissertation analysing typosquatting exposure across 15 high-profile Irish brands using a multi-tool passive-reconnaissance pipeline.</p>
+                        <div class="project-tech">
+                            <span>Python</span><span>HIBS Pro</span><span>dnstwist</span>
+                            <span>VirusTotal</span><span>DNS/WHOIS</span>
+                        </div>
+                        <button class="project-expand" onclick="toggleProjectDetails(this)">
+                            <span>View Details</span><i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="project-details-content">
+                            <ul>
+                                <li>Designed and executed a three-stage passive-reconnaissance pipeline across 15 Irish seed domains spanning five economic sectors, producing 2,432 permutations and 2,087 registered variants</li>
+                                <li>Identified a 7.3× cross-tool divergence in registered-variant counts (CIRCL vs HIBS Pro vs dnstwist), demonstrating that single-tool typosquatting studies systematically miscount exposure</li>
+                                <li>Quantified sector-level exposure patterns, finding Government Services had the highest phishing classification rate (9.13%) and that only 18.2% of .ie variants remain within the .ie namespace</li>
+                                <li>Conducted multi-source case study on bankofiireland.com showing convergent malicious classification across six independent platforms including VirusTotal, AbuseIPDB and Spamhaus</li>
+                                <li>Delivered in full GDPR compliance using passive reconnaissance only, with findings directly informing takedown recommendations for Irish brand owners and the NCSC-IE</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
                 <div class="project-card" data-category="year4">
-                    <div class="project-header-card">
-                        <div class="project-icon">
-                            <i class="fas fa-bug"></i>
+                    <div class="project-card-bar">
+                        <div class="term-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+                        <span class="term-title">tpot_hive_analysis.sh</span>
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-header-card">
+                            <div class="project-icon"><i class="fas fa-bug"></i></div>
+                            <span class="project-badge">Year 4</span>
                         </div>
-                        <span class="project-badge">Year 4</span>
-                    </div>
-                    <h3>T-Pot & Hive Network Security Analysis</h3>
-                    <p class="project-period">Sep - Nov 2025</p>
-                    <p class="project-desc">Advanced honeypot deployment integrated with TheHive case management for comprehensive threat analysis.</p>
-                    <div class="project-tech">
-                        <span>T-Pot</span>
-                        <span>Kibana</span>
-                        <span>Elasticsearch</span>
-                    </div>
-                    <button class="project-expand" onclick="toggleProjectDetails(this)">
-                        <span>View Details</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="project-details-content">
-                        <ul>
-                            <li>Set up T-Pot honeypot system with multiple services (SSH, HTTP, SMB) to attract malicious traffic</li>
-                            <li>Analyzed attacker behavior patterns, exploitation techniques, and malware samples</li>
-                            <li>Visualized attack data using integrated ELK stack dashboards</li>
-                            <li>Documented common attack vectors and IOCs for threat intelligence</li>
-                        </ul>
+                        <h3>T-Pot &amp; Hive Network Security Analysis</h3>
+                        <p class="project-period">Sep - Nov 2025</p>
+                        <p class="project-desc">Advanced honeypot deployment integrated with TheHive case management for comprehensive threat analysis.</p>
+                        <div class="project-tech">
+                            <span>T-Pot</span><span>Kibana</span><span>Elasticsearch</span>
+                        </div>
+                        <button class="project-expand" onclick="toggleProjectDetails(this)">
+                            <span>View Details</span><i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="project-details-content">
+                            <ul>
+                                <li>Set up T-Pot honeypot system with multiple services (SSH, HTTP, SMB) to attract malicious traffic</li>
+                                <li>Analyzed attacker behavior patterns, exploitation techniques, and malware samples</li>
+                                <li>Visualized attack data using integrated ELK stack dashboards</li>
+                                <li>Documented common attack vectors and IOCs for threat intelligence</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
                 <div class="project-card" data-category="year4">
-                    <div class="project-header-card">
-                        <div class="project-icon">
-                            <i class="fas fa-server"></i>
+                    <div class="project-card-bar">
+                        <div class="term-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+                        <span class="term-title">open_source_soc.sh</span>
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-header-card">
+                            <div class="project-icon"><i class="fas fa-server"></i></div>
+                            <span class="project-badge">Year 4</span>
                         </div>
-                        <span class="project-badge">Year 4</span>
-                    </div>
-                    <h3>Open-Source SOC Implementation</h3>
-                    <p class="project-period">Sep - Dec 2025</p>
-                    <p class="project-desc">Design and implementation of a fully functional open-source Security Operations Center for threat detection and incident response.</p>
-                    <div class="project-tech">
-                        <span>Wazuh</span>
-                        <span>TheHive</span>
-                        <span>MISP</span>
-                        <span>Velociraptor</span>
-                    </div>
-                    <button class="project-expand" onclick="toggleProjectDetails(this)">
-                        <span>View Details</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="project-details-content">
-                        <ul>
-                            <li>Deployed and configured open-source SOC tools including Wazuh, TheHive, MISP and Velociraptor</li>
-                            <li>Integrated a sensor–hive architecture to collect and analyze security telemetry from multiple hosts</li>
-                            <li>Simulated and investigated three cyberattacks: network intrusion, malware infection and privilege escalation</li>
-                            <li>Used SIEM dashboards and case management tools to detect alerts, correlate events and perform forensic analysis</li>
-                            <li>Demonstrated how open-source tools can provide effective threat intelligence and incident response capabilities</li>
-                        </ul>
+                        <h3>Open-Source SOC Implementation</h3>
+                        <p class="project-period">Sep - Dec 2025</p>
+                        <p class="project-desc">Design and implementation of a fully functional open-source Security Operations Center for threat detection and incident response.</p>
+                        <div class="project-tech">
+                            <span>Wazuh</span><span>TheHive</span><span>MISP</span><span>Velociraptor</span>
+                        </div>
+                        <button class="project-expand" onclick="toggleProjectDetails(this)">
+                            <span>View Details</span><i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="project-details-content">
+                            <ul>
+                                <li>Deployed and configured open-source SOC tools including Wazuh, TheHive, MISP and Velociraptor</li>
+                                <li>Integrated a sensor–hive architecture to collect and analyze security telemetry from multiple hosts</li>
+                                <li>Simulated and investigated three cyberattacks: network intrusion, malware infection and privilege escalation</li>
+                                <li>Used SIEM dashboards and case management tools to detect alerts, correlate events and perform forensic analysis</li>
+                                <li>Demonstrated how open-source tools can provide effective threat intelligence and incident response capabilities</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
                 <div class="project-card" data-category="year4">
-                    <div class="project-header-card">
-                        <div class="project-icon">
-                            <i class="fas fa-lock"></i>
+                    <div class="project-card-bar">
+                        <div class="term-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+                        <span class="term-title">sast_dast_testing.sh</span>
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-header-card">
+                            <div class="project-icon"><i class="fas fa-lock"></i></div>
+                            <span class="project-badge">Year 4</span>
                         </div>
-                        <span class="project-badge">Year 4</span>
-                    </div>
-                    <h3>SAST/DAST Application Security Testing</h3>
-                    <p class="project-period">Oct - Dec 2025</p>
-                    <p class="project-desc">Comprehensive application security analysis using Static and Dynamic testing methodologies.</p>
-                    <div class="project-tech">
-                        <span>Snyk</span>
-                        <span>OWASP ZAP</span>
-                        <span>Burp Suite</span>
-                    </div>
-                    <button class="project-expand" onclick="toggleProjectDetails(this)">
-                        <span>View Details</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="project-details-content">
-                        <ul>
-                            <li>Perform Static Application Security Testing (SAST) using SNYK</li>
-                            <li>Conduct Dynamic Application Security Testing (DAST) with OWASP ZAP</li>
-                            <li>Identify and document vulnerabilities across the SDLC</li>
-                            <li>Create security remediation recommendations and reports</li>
-                        </ul>
+                        <h3>SAST/DAST Application Security Testing</h3>
+                        <p class="project-period">Oct - Dec 2025</p>
+                        <p class="project-desc">Comprehensive application security analysis using Static and Dynamic testing methodologies.</p>
+                        <div class="project-tech">
+                            <span>Snyk</span><span>OWASP ZAP</span><span>Burp Suite</span>
+                        </div>
+                        <button class="project-expand" onclick="toggleProjectDetails(this)">
+                            <span>View Details</span><i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="project-details-content">
+                            <ul>
+                                <li>Perform Static Application Security Testing (SAST) using SNYK</li>
+                                <li>Conduct Dynamic Application Security Testing (DAST) with OWASP ZAP</li>
+                                <li>Identify and document vulnerabilities across the SDLC</li>
+                                <li>Create security remediation recommendations and reports</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
                 <div class="project-card" data-category="year4">
-                    <div class="project-header-card">
-                        <div class="project-icon">
-                            <i class="fas fa-cloud"></i>
+                    <div class="project-card-bar">
+                        <div class="term-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+                        <span class="term-title">cloud_bcdr.sh</span>
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-header-card">
+                            <div class="project-icon"><i class="fas fa-cloud"></i></div>
+                            <span class="project-badge">Year 4</span>
                         </div>
-                        <span class="project-badge">Year 4</span>
-                    </div>
-                    <h3>Cloud Business Continuity & Disaster Recovery</h3>
-                    <p class="project-period">Jan - Apr 2026</p>
-                    <p class="project-desc">Designed and implemented a disaster recovery strategy for a healthcare API using AWS cloud services with a Pilot Light approach.</p>
-                    <div class="project-tech">
-                        <span>AWS</span>
-                        <span>CloudFormation</span>
-                        <span>EC2</span>
-                        <span>RDS</span>
-                        <span>IAM</span>
-                    </div>
-                    <button class="project-expand" onclick="toggleProjectDetails(this)">
-                        <span>View Details</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="project-details-content">
-                        <ul>
-                            <li>Conducted Business Impact Analysis (BIA) and risk assessment for GlobalHealth Connect healthcare API</li>
-                            <li>Implemented Pilot Light DR strategy with cross-region replication (Ireland to London) achieving 24-minute RTO</li>
-                            <li>Developed Infrastructure as Code using CloudFormation for automated recovery deployment</li>
-                            <li>Configured IAM roles with least privilege, restricting DR operations to secondary region only</li>
-                            <li>Performed chaos testing by simulating complete region failure and validating recovery procedures</li>
-                        </ul>
+                        <h3>Cloud Business Continuity &amp; Disaster Recovery</h3>
+                        <p class="project-period">Jan - Apr 2026</p>
+                        <p class="project-desc">Designed and implemented a disaster recovery strategy for a healthcare API using AWS cloud services with a Pilot Light approach.</p>
+                        <div class="project-tech">
+                            <span>AWS</span><span>CloudFormation</span><span>EC2</span>
+                            <span>RDS</span><span>IAM</span>
+                        </div>
+                        <button class="project-expand" onclick="toggleProjectDetails(this)">
+                            <span>View Details</span><i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="project-details-content">
+                            <ul>
+                                <li>Conducted Business Impact Analysis (BIA) and risk assessment for GlobalHealth Connect healthcare API</li>
+                                <li>Implemented Pilot Light DR strategy with cross-region replication (Ireland to London) achieving 24-minute RTO</li>
+                                <li>Developed Infrastructure as Code using CloudFormation for automated recovery deployment</li>
+                                <li>Configured IAM roles with least privilege, restricting DR operations to secondary region only</li>
+                                <li>Performed chaos testing by simulating complete region failure and validating recovery procedures</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
                 <div class="project-card" data-category="year4">
-                    <div class="project-header-card">
-                        <div class="project-icon">
-                            <i class="fas fa-face-smile"></i>
+                    <div class="project-card-bar">
+                        <div class="term-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+                        <span class="term-title">biometric_far_frr.py</span>
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-header-card">
+                            <div class="project-icon"><i class="fas fa-face-smile"></i></div>
+                            <span class="project-badge">Year 4</span>
                         </div>
-                        <span class="project-badge">Year 4</span>
-                    </div>
-                    <h3>FAR/FRR Biometric Testing Framework</h3>
-                    <p class="project-period">Oct - Nov 2026</p>
-                    <p class="project-desc">Facial recognition system evaluation measuring False Accept Rate (FAR) and False Reject Rate (FRR).</p>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>OpenCV</span>
-                        <span>Face Recognition</span>
-                    </div>
-                    <button class="project-expand" onclick="toggleProjectDetails(this)">
-                        <span>View Details</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="project-details-content">
-                        <ul>
-                            <li>Develop testing framework for biometric authentication systems</li>
-                            <li>Measure and analyze FAR/FRR metrics across different scenarios</li>
-                            <li>Test against various lighting conditions and facial variations</li>
-                            <li>Document findings and security implications for biometric systems</li>
-                        </ul>
+                        <h3>FAR/FRR Biometric Testing Framework</h3>
+                        <p class="project-period">Oct - Nov 2026</p>
+                        <p class="project-desc">Facial recognition system evaluation measuring False Accept Rate (FAR) and False Reject Rate (FRR).</p>
+                        <div class="project-tech">
+                            <span>Python</span><span>OpenCV</span><span>Face Recognition</span>
+                        </div>
+                        <button class="project-expand" onclick="toggleProjectDetails(this)">
+                            <span>View Details</span><i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="project-details-content">
+                            <ul>
+                                <li>Develop testing framework for biometric authentication systems</li>
+                                <li>Measure and analyze FAR/FRR metrics across different scenarios</li>
+                                <li>Test against various lighting conditions and facial variations</li>
+                                <li>Document findings and security implications for biometric systems</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Year 3 Projects -->
+                <!-- Year 3 -->
                 <div class="project-card" data-category="year3">
-                    <div class="project-header-card">
-                        <div class="project-icon">
-                            <i class="fab fa-discord"></i>
+                    <div class="project-card-bar">
+                        <div class="term-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+                        <span class="term-title">reconbot.py</span>
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-header-card">
+                            <div class="project-icon"><i class="fab fa-discord"></i></div>
+                            <span class="project-badge year3">Year 3</span>
                         </div>
-                        <span class="project-badge year3">Year 3</span>
-                    </div>
-                    <h3>ReconBot - OSINT Discord Bot</h3>
-                    <p class="project-period">Jan – May 2025</p>
-                    <p class="project-desc">Modular Discord bot to democratize OSINT capabilities and cybersecurity education with AI-powered intelligence.</p>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>Discord.py</span>
-                        <span>OpenAI API</span>
-                        <span>OSINT</span>
-                    </div>
-                    <button class="project-expand" onclick="toggleProjectDetails(this)">
-                        <span>View Details</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="project-details-content">
-                        <ul>
-                            <li><strong>AI-Powered Intelligence:</strong> Integrated GPT-4o-mini for automated analysis of WHOIS data, email breaches, password security</li>
-                            <li><strong>8+ OSINT Commands:</strong> IP geolocation, breach checking (LeakCheck & HaveIBeenPwned APIs), port scanning, Google Dorking</li>
-                            <li><strong>Security-First Design:</strong> K-anonymity for password checking, ephemeral Discord messages, ethical usage warnings</li>
-                            <li><strong>Asynchronous Architecture:</strong> Built with Discord.py's async capabilities for concurrent user queries</li>
-                            <li><strong>Team Leadership:</strong> Collaborated with 2 teammates, GitHub version control, 82-page technical documentation</li>
-                        </ul>
+                        <h3>ReconBot - OSINT Discord Bot</h3>
+                        <p class="project-period">Jan – May 2025</p>
+                        <p class="project-desc">Modular Discord bot to democratize OSINT capabilities and cybersecurity education with AI-powered intelligence.</p>
+                        <div class="project-tech">
+                            <span>Python</span><span>Discord.py</span><span>OpenAI API</span><span>OSINT</span>
+                        </div>
+                        <button class="project-expand" onclick="toggleProjectDetails(this)">
+                            <span>View Details</span><i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="project-details-content">
+                            <ul>
+                                <li><strong>AI-Powered Intelligence:</strong> Integrated GPT-4o-mini for automated analysis of WHOIS data, email breaches, password security</li>
+                                <li><strong>8+ OSINT Commands:</strong> IP geolocation, breach checking (LeakCheck &amp; HaveIBeenPwned APIs), port scanning, Google Dorking</li>
+                                <li><strong>Security-First Design:</strong> K-anonymity for password checking, ephemeral Discord messages, ethical usage warnings</li>
+                                <li><strong>Asynchronous Architecture:</strong> Built with Discord.py's async capabilities for concurrent user queries</li>
+                                <li><strong>Team Leadership:</strong> Collaborated with 2 teammates, GitHub version control, 82-page technical documentation</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
                 <div class="project-card" data-category="year3">
-                    <div class="project-header-card">
-                        <div class="project-icon">
-                            <i class="fas fa-fire-alt"></i>
+                    <div class="project-card-bar">
+                        <div class="term-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+                        <span class="term-title">firewall_config.sh</span>
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-header-card">
+                            <div class="project-icon"><i class="fas fa-fire-alt"></i></div>
+                            <span class="project-badge year3">Year 3</span>
                         </div>
-                        <span class="project-badge year3">Year 3</span>
-                    </div>
-                    <h3>Network Security & Firewall Configuration</h3>
-                    <p class="project-period">Feb - Apr 2025</p>
-                    <p class="project-desc">Security assessment and firewall implementation to protect against network attacks.</p>
-                    <div class="project-tech">
-                        <span>nftables</span>
-                        <span>IPFire</span>
-                        <span>Wireshark</span>
-                        <span>hping3</span>
-                    </div>
-                    <button class="project-expand" onclick="toggleProjectDetails(this)">
-                        <span>View Details</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="project-details-content">
-                        <ul>
-                            <li><strong>Attack Simulation:</strong> TCP SYN flood attacks, Nmap port scans, ping sweeps on virtualized network</li>
-                            <li><strong>Firewall Comparison:</strong> Configured nftables & IPFire with rate-limiting, stateful inspection, drop policies</li>
-                            <li><strong>Custom Configuration:</strong> Custom rulesets for packet filtering, traffic management, DoS mitigation</li>
-                            <li><strong>Traffic Analysis:</strong> tcpdump & Wireshark for attack pattern analysis and effectiveness testing</li>
-                            <li><strong>Documentation:</strong> Comparative evaluation of performance and security between solutions</li>
-                        </ul>
+                        <h3>Network Security &amp; Firewall Configuration</h3>
+                        <p class="project-period">Feb - Apr 2025</p>
+                        <p class="project-desc">Security assessment and firewall implementation to protect against network attacks.</p>
+                        <div class="project-tech">
+                            <span>nftables</span><span>IPFire</span><span>Wireshark</span><span>hping3</span>
+                        </div>
+                        <button class="project-expand" onclick="toggleProjectDetails(this)">
+                            <span>View Details</span><i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="project-details-content">
+                            <ul>
+                                <li><strong>Attack Simulation:</strong> TCP SYN flood attacks, Nmap port scans, ping sweeps on virtualized network</li>
+                                <li><strong>Firewall Comparison:</strong> Configured nftables &amp; IPFire with rate-limiting, stateful inspection, drop policies</li>
+                                <li><strong>Custom Configuration:</strong> Custom rulesets for packet filtering, traffic management, DoS mitigation</li>
+                                <li><strong>Traffic Analysis:</strong> tcpdump &amp; Wireshark for attack pattern analysis and effectiveness testing</li>
+                                <li><strong>Documentation:</strong> Comparative evaluation of performance and security between solutions</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Year 2 Projects -->
+                <!-- Year 2 -->
                 <div class="project-card" data-category="year2">
-                    <div class="project-header-card">
-                        <div class="project-icon">
-                            <i class="fas fa-dumbbell"></i>
+                    <div class="project-card-bar">
+                        <div class="term-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+                        <span class="term-title">gymgo.php</span>
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-header-card">
+                            <div class="project-icon"><i class="fas fa-dumbbell"></i></div>
+                            <span class="project-badge year2">Year 2</span>
                         </div>
-                        <span class="project-badge year2">Year 2</span>
-                    </div>
-                    <h3>GymGo - Gym Management System</h3>
-                    <p class="project-period">Feb - Apr 2024</p>
-                    <p class="project-desc">Full-stack web application for gym membership and class scheduling management.</p>
-                    <div class="project-tech">
-                        <span>PHP</span>
-                        <span>MySQL</span>
-                        <span>HTML/CSS</span>
-                    </div>
-                    <button class="project-expand" onclick="toggleProjectDetails(this)">
-                        <span>View Details</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="project-details-content">
-                        <ul>
-                            <li>Dynamic PHP backend with MySQL database integration</li>
-                            <li>Member tracking system with full CRUD operations</li>
-                            <li>Class scheduling and booking functionality</li>
-                            <li>Responsive user interface with HTML/CSS</li>
-                        </ul>
+                        <h3>GymGo - Gym Management System</h3>
+                        <p class="project-period">Feb - Apr 2024</p>
+                        <p class="project-desc">Full-stack web application for gym membership and class scheduling management.</p>
+                        <div class="project-tech">
+                            <span>PHP</span><span>MySQL</span><span>HTML/CSS</span>
+                        </div>
+                        <button class="project-expand" onclick="toggleProjectDetails(this)">
+                            <span>View Details</span><i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="project-details-content">
+                            <ul>
+                                <li>Dynamic PHP backend with MySQL database integration</li>
+                                <li>Member tracking system with full CRUD operations</li>
+                                <li>Class scheduling and booking functionality</li>
+                                <li>Responsive user interface with HTML/CSS</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
                 <div class="project-card" data-category="year2">
-                    <div class="project-header-card">
-                        <div class="project-icon">
-                            <i class="fas fa-utensils"></i>
+                    <div class="project-card-bar">
+                        <div class="term-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+                        <span class="term-title">dining_philosophers.java</span>
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-header-card">
+                            <div class="project-icon"><i class="fas fa-utensils"></i></div>
+                            <span class="project-badge year2">Year 2</span>
                         </div>
-                        <span class="project-badge year2">Year 2</span>
-                    </div>
-                    <h3>Dining Philosophers Problem</h3>
-                    <p class="project-period">Jan - May 2024</p>
-                    <p class="project-desc">Classic concurrency problem implementation demonstrating resource sharing and deadlock avoidance.</p>
-                    <div class="project-tech">
-                        <span>Java</span>
-                        <span>Concurrency</span>
-                        <span>Threading</span>
-                    </div>
-                    <button class="project-expand" onclick="toggleProjectDetails(this)">
-                        <span>View Details</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="project-details-content">
-                        <ul>
-                            <li>Multi-threaded environment simulation with shared resources</li>
-                            <li>Deadlock prevention mechanism implementation</li>
-                            <li>Synchronization and thread safety demonstration</li>
-                        </ul>
+                        <h3>Dining Philosophers Problem</h3>
+                        <p class="project-period">Jan - May 2024</p>
+                        <p class="project-desc">Classic concurrency problem implementation demonstrating resource sharing and deadlock avoidance.</p>
+                        <div class="project-tech">
+                            <span>Java</span><span>Concurrency</span><span>Threading</span>
+                        </div>
+                        <button class="project-expand" onclick="toggleProjectDetails(this)">
+                            <span>View Details</span><i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="project-details-content">
+                            <ul>
+                                <li>Multi-threaded environment simulation with shared resources</li>
+                                <li>Deadlock prevention mechanism implementation</li>
+                                <li>Synchronization and thread safety demonstration</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Year 1 Projects -->
+                <!-- Year 1 -->
                 <div class="project-card" data-category="year1">
-                    <div class="project-header-card">
-                        <div class="project-icon">
-                            <i class="fas fa-coffee"></i>
-                        </div>
-                        <span class="project-badge year1">Year 1</span>
+                    <div class="project-card-bar">
+                        <div class="term-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+                        <span class="term-title">coffeeshop_pos.java</span>
                     </div>
-                    <h3>Java Coffee Shop POS</h3>
-                    <p class="project-period">Mar - Apr 2023</p>
-                    <p class="project-desc">Point-of-sale system with GUI for order processing and receipt generation.</p>
-                    <div class="project-tech">
-                        <span>Java</span>
-                        <span>Swing GUI</span>
+                    <div class="project-card-body">
+                        <div class="project-header-card">
+                            <div class="project-icon"><i class="fas fa-coffee"></i></div>
+                            <span class="project-badge year1">Year 1</span>
+                        </div>
+                        <h3>Java Coffee Shop POS</h3>
+                        <p class="project-period">Mar - Apr 2023</p>
+                        <p class="project-desc">Point-of-sale system with GUI for order processing and receipt generation.</p>
+                        <div class="project-tech">
+                            <span>Java</span><span>Swing GUI</span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="project-card" data-category="year1">
-                    <div class="project-header-card">
-                        <div class="project-icon">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                        <span class="project-badge year1">Year 1</span>
+                    <div class="project-card-bar">
+                        <div class="term-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+                        <span class="term-title">portfolio_v1.html</span>
                     </div>
-                    <h3>Personal Portfolio Website</h3>
-                    <p class="project-period">Nov - Dec 2022</p>
-                    <p class="project-desc">Responsive website showcasing academic projects and interests.</p>
-                    <div class="project-tech">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>Responsive Design</span>
+                    <div class="project-card-body">
+                        <div class="project-header-card">
+                            <div class="project-icon"><i class="fas fa-laptop-code"></i></div>
+                            <span class="project-badge year1">Year 1</span>
+                        </div>
+                        <h3>Personal Portfolio Website</h3>
+                        <p class="project-period">Nov - Dec 2022</p>
+                        <p class="project-desc">Responsive website showcasing academic projects and interests.</p>
+                        <div class="project-tech">
+                            <span>HTML</span><span>CSS</span><span>Responsive Design</span>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
     <!-- Achievements Section -->
-    <section id="achievements" class="section">
+    <section id="achievements" class="section section-alt">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Recognition</span>
-                <h2 class="section-title">Achievements & Certifications</h2>
+                <div class="section-cmd">
+                    <span class="s-prompt">root@kali</span><span class="s-sep">:</span><span class="s-path">~/achievements</span><span class="s-dollar">$</span>
+                    <span class="s-cmd">cat certifications.log</span>
+                </div>
+                <h2 class="section-title">Achievements &amp; Certifications</h2>
             </div>
             <div class="achievements-grid">
+
                 <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
+                    <div class="achievement-icon"><i class="fas fa-trophy"></i></div>
                     <h4>ReconBot Group Project</h4>
                     <p>Built modular OSINT Discord bot with AI integration</p>
                     <span class="achievement-grade">Grade: A (80%)</span>
                 </div>
 
                 <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-flag-checkered"></i>
-                    </div>
+                    <div class="achievement-icon"><i class="fas fa-flag-checkered"></i></div>
                     <h4>CTF "Zero Days 2025"</h4>
                     <p>Finished 47th out of 120 participants</p>
                 </div>
 
                 <div class="achievement-card cert-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <h4>AttackIQ - MITRE ATT&CK v13</h4>
-                    <p>Foundations of Operationalizing MITRE ATT&CK</p>
+                    <div class="achievement-icon"><i class="fas fa-certificate"></i></div>
+                    <h4>AttackIQ - MITRE ATT&amp;CK v13</h4>
+                    <p>Foundations of Operationalizing MITRE ATT&amp;CK</p>
                     <a href="https://www.credly.com/badges/b9c3cf68-e2ff-4ea5-95b8-b0c76a295615" target="_blank" class="cert-link">
                         View Certificate <i class="fas fa-external-link-alt"></i>
                     </a>
                 </div>
 
                 <div class="achievement-card cert-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
+                    <div class="achievement-icon"><i class="fas fa-certificate"></i></div>
                     <h4>Cisco - Junior Cybersecurity Analyst</h4>
                     <p>Career Path Certification</p>
                     <a href="https://www.credly.com/badges/891c2a24-50df-4aa1-9b14-c115e0afcace" target="_blank" class="cert-link">
@@ -775,9 +840,7 @@
                 </div>
 
                 <div class="achievement-card cert-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
+                    <div class="achievement-icon"><i class="fas fa-certificate"></i></div>
                     <h4>Cisco - Ethical Hacker</h4>
                     <p>Ethical Hacking Certificate</p>
                     <a href="https://www.credly.com/badges/b53fbfe4-7678-4a07-bc6f-0551263be1c3" target="_blank" class="cert-link">
@@ -786,9 +849,7 @@
                 </div>
 
                 <div class="achievement-card cert-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
+                    <div class="achievement-icon"><i class="fas fa-certificate"></i></div>
                     <h4>Cisco - Introduction to Cybersecurity</h4>
                     <p>Cybersecurity Fundamentals Certificate</p>
                     <a href="https://www.credly.com/badges/12ebaf44-49f3-47b9-88e8-7fad3047d26f" target="_blank" class="cert-link">
@@ -797,33 +858,25 @@
                 </div>
 
                 <div class="achievement-card cert-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
+                    <div class="achievement-icon"><i class="fas fa-certificate"></i></div>
                     <h4>Google Cloud - Chronicle SOAR Fundamentals</h4>
                     <p>SOAR Fundamentals Completion Badge</p>
                 </div>
 
                 <div class="achievement-card cert-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
+                    <div class="achievement-icon"><i class="fas fa-certificate"></i></div>
                     <h4>Google Cloud - Chronicle SOAR Analyst</h4>
                     <p>Security Operations - SOAR Analyst Badge</p>
                 </div>
 
                 <div class="achievement-card cert-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
+                    <div class="achievement-icon"><i class="fas fa-certificate"></i></div>
                     <h4>IBM - QRadar SIEM</h4>
                     <p>Using IBM QRadar SIEM Certificate</p>
                 </div>
 
                 <div class="achievement-card cert-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
+                    <div class="achievement-icon"><i class="fas fa-certificate"></i></div>
                     <h4>TryHackMe - SOC Level 1</h4>
                     <p>Security Operations Center Analyst Training</p>
                     <a href="https://tryhackme.com/certificate/THM-MR2M5QWXGW" target="_blank" class="cert-link">
@@ -832,9 +885,7 @@
                 </div>
 
                 <div class="achievement-card cert-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
+                    <div class="achievement-icon"><i class="fas fa-certificate"></i></div>
                     <h4>TryHackMe - AI Security</h4>
                     <p>AI Security Fundamentals Certificate</p>
                     <a href="https://tryhackme.com/certificate/THM-TQMQ22UYXI" target="_blank" class="cert-link">
@@ -843,67 +894,57 @@
                 </div>
 
                 <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
+                    <div class="achievement-icon"><i class="fas fa-chart-line"></i></div>
                     <h4>Splunk Training</h4>
-                    <p>Intro to Splunk, Understanding Threats & Attacks, Visualizations (eLearning)</p>
+                    <p>Intro to Splunk, Understanding Threats &amp; Attacks, Visualizations (eLearning)</p>
                 </div>
 
                 <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
+                    <div class="achievement-icon"><i class="fas fa-code"></i></div>
                     <h4>SymfonyCasts PHP Levels 1–3</h4>
                     <p>Advanced PHP Programming (Jan–Mar 2024)</p>
                 </div>
 
                 <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-award"></i>
-                    </div>
+                    <div class="achievement-icon"><i class="fas fa-award"></i></div>
                     <h4>Marino College Student of the Year</h4>
                     <p>2018, 2019</p>
                 </div>
 
                 <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-futbol"></i>
-                    </div>
+                    <div class="achievement-icon"><i class="fas fa-futbol"></i></div>
                     <h4>Manager's Player of the Year</h4>
                     <p>Navan Road United (2014/15)</p>
                 </div>
+
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section section-alt">
+    <section id="contact" class="section">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Let's connect</span>
+                <div class="section-cmd">
+                    <span class="s-prompt">root@kali</span><span class="s-sep">:</span><span class="s-path">~/contact</span><span class="s-dollar">$</span>
+                    <span class="s-cmd">./send_message.sh</span>
+                </div>
                 <h2 class="section-title">Get In Touch</h2>
             </div>
             <div class="contact-content">
                 <div class="contact-info-grid">
                     <a href="mailto:alexdiaconu369@gmail.com" class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                         <h4>Email</h4>
                         <p>alexdiaconu369@gmail.com</p>
                     </a>
                     <a href="tel:0877028150" class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
                         <h4>Phone</h4>
                         <p>087 702 8150</p>
                     </a>
                     <a href="https://www.linkedin.com/in/alexandru-diaconu-b41277258/" target="_blank" class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fab fa-linkedin"></i>
-                        </div>
+                        <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
                         <h4>LinkedIn</h4>
                         <p>Connect with me</p>
                     </a>
@@ -918,11 +959,12 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>Designed & Built by <strong>Alexandru Diaconu</strong></p>
-                <p>&copy; 2026 All rights reserved</p>
+        <div class="footer-content">
+            <p>Designed &amp; Built by <strong>Alexandru Diaconu</strong></p>
+            <div class="footer-prompt">
+                <span class="fp">root@kali</span><span>:~$</span>&nbsp;<span>exit</span>
             </div>
+            <p>&copy; 2026 All rights reserved</p>
         </div>
     </footer>
 
